@@ -1,17 +1,35 @@
-import { Card } from "./Card"
+import { StyledHeadline2, StyledHeadline3 } from "../../style/typography";
+import { Card } from "./Card";
+import { StyledList, StyledSectionList } from "./style";
 
-export const List = ({moneyList, setMoneyList})=>{
+export const List = ({ moneyList, setMoneyList }) => {
+  const removeMoneyList = (moneyId) => {
+    setMoneyList((moneyList) =>
+      moneyList.filter((money) => money.id !== moneyId)
+    );
+  };
 
-    const removeMoneyList = (moneyId) =>{
-        setMoneyList((moneyList)=>moneyList.filter(money => money.id !==moneyId));
-    }
+  return (
+    <StyledSectionList>
+      <StyledHeadline3 className="sectionText">
+        Resumo financeiro
+      </StyledHeadline3>
 
-    return(
-        <section>
-            <h3>Resumo financeiro</h3>
-            <ul>
-                {moneyList.map((value)=><Card key={value.id} value={value} removeMoneyList={removeMoneyList}/>)}
-            </ul>
-        </section>
-    )
-}
+      {moneyList.length > 0 ? (
+        <StyledList>
+          {moneyList.map((value) => (
+            <Card
+              key={value.id}
+              value={value}
+              removeMoneyList={removeMoneyList}
+            />
+          ))}
+        </StyledList>
+      ) : (
+        <StyledHeadline2>
+          Você ainda não possui nenhum lançamento
+        </StyledHeadline2>
+      )}
+    </StyledSectionList>
+  );
+};

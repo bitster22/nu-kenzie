@@ -5,6 +5,7 @@ export const GlobalReset = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        font-family: var(--Font-Primary);
     }
 
     button{
@@ -25,8 +26,4 @@ export const GlobalReset = createGlobalStyle`
     -webkit-appearance: none !important;
     margin: 0 !important;
     }
-  
-    input[type="number"] {
-        -moz-appearance: textfield !important;
-    }
-`
+`;
