@@ -5,7 +5,6 @@ export const StyledTotalMoney = styled.div`
   border-radius: 0.25rem;
   padding: 2rem 1rem;
   width: 100%;
-  max-width: 22.1875rem;
   display: flex;
   justify-content: space-between;
 `;

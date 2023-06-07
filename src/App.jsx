@@ -8,7 +8,7 @@ import { GlobalStyles } from "./style/global";
 import { StyledContainer } from "./style/grid";
 import { StyledFlexBox } from "./style/pages/app";
 
-function App() {
+export const App = () => {
   const [moneyList, setMoneyList] = useState([]);
 
   return (

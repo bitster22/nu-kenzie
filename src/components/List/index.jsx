@@ -26,7 +26,7 @@ export const List = ({ moneyList, setMoneyList }) => {
           ))}
         </StyledList>
       ) : (
-        <StyledHeadline2>
+        <StyledHeadline2 className="noValues">
           Você ainda não possui nenhum lançamento
         </StyledHeadline2>
       )}
